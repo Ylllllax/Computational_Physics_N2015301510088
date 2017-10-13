@@ -37,7 +37,7 @@ for angle in range(35,56):
     angle_list.append(angle);x_list.append(x[-1])
 
 pl.figure(figsize=(10,6))
-pl.plot(angle_list,x_list,'or')
+pl.plot(angle_list,x_list,'o')
 pl.xlabel("$angle/\circ$")
 pl.ylabel("x/m")
 pl.show()
