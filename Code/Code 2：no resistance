@@ -2,52 +2,84 @@ import math
 import numpy as np
 import matplotlib.pyplot as pl
 
-def projectile(angle,x_n=None,y_n=None):
-    if x_n is None:
-        x_n=[]
-    if y_n is None:
-        y_n=[]
-    t=[]
-    dt=0.01
-    g=9.8
-    end_time = 200
-    t.append(0)
-    v_x=[]
-    v_y=[]
-    x_n.append(0)
-    y_n.append(0)
-    v_x.append(700*math.cos(angle))
-    v_y.append(700*math.cos(angle))
-    for i in range(int(end_time/dt)):
-        m=x_n[i]+v_x[i]*dt
-        x_n.append(m)
-        n=v_x[i]
-        v_x.append(n)
-        o=y_n[i]+v_y[i]*dt
-        y_n.append(o)
-        p=v_y[i]-g*dt
-        v_y.append(p)
-        if o <= 0 :
-            break
-    print (x_n[-1],y_n[-1])
-    return x_n,y_n
-
+t=[]
+dt=0.01
+g=9.8
+end_time = 200
 a=30*math.pi/180
 b=45*math.pi/180
 c=60*math.pi/180
+angle = [a,b,c]
+t.append(0)
 
-projectile(a,x_1,y_1)
-projectile(b,x_2,y_2)
-projectile(c,x_3,y_3)
+x_1=[]
+v_x_1=[]
+y_1=[]
+v_y_1=[]
+x_1.append(0)
+y_1.append(0)
+v_x_1.append(700*math.cos(angle[0]))
+v_y_1.append(700*math.sin(angle[0]))
+for i in range(int(end_time/dt)):
+    m=x_1[i]+v_x_1[i]*dt
+    x_1.append(m)
+    n=v_x_1[i]
+    v_x_1.append(n)
+    o=y_1[i]+v_y_1[i]*dt	
+    y_1.append(o)
+    p=v_y_1[i]-g*dt
+    v_y_1.append(p)
+    if o <= 0 :
+        break
+
+
+x_2=[]
+v_x_2=[]
+y_2=[]
+v_y_2=[]
+x_2.append(0)
+y_2.append(0)
+v_x_2.append(700*math.cos(angle[1]))
+v_y_2.append(700*math.sin(angle[1]))
+for i in range(int(end_time/dt)):
+    m=x_2[i]+v_x_2[i]*dt
+    x_2.append(m)
+    n=v_x_2[i]
+    v_x_2.append(n)
+    o=y_2[i]+v_y_2[i]*dt
+    y_2.append(o)
+    p=v_y_2[i]-g*dt
+    v_y_2.append(p)
+    if o <= 0 :
+        break
+
+x_3=[]
+v_x_3=[]
+y_3=[]
+v_y_3=[]
+x_3.append(0)
+y_3.append(0)
+v_x_3.append(700*math.cos(angle[2]))
+v_y_3.append(700*math.sin(angle[2]))
+for i in range(int(end_time/dt)):
+    m=x_3[i]+v_x_3[i]*dt
+    x_3.append(m)
+    n=v_x_3[i]
+    v_x_3.append(n)
+    o=y_3[i]+v_y_3[i]*dt
+    y_3.append(o)
+    p=v_y_3[i]-g*dt
+    v_y_3.append(p)
+    if o <= 0 :
+        break
 
 pl.figure(figsize=(10,6))
-pl.plot(x_1,y_1,label="$30^\circ$",color="red",linewidth=2)
-pl.plot(x_2,y_2,label="$45^\circ$",color="black",linewidth=2)
-pl.plot(x_3,y_3,label="$60^\circ$",color="blue",linewidth=2)
+pl.plot(x_1,y_1,label="$30^\circ$",color="red")
+pl.plot(x_2,y_2,label="$45^\circ$",color="black")
+pl.plot(x_3,y_3,label="$60^\circ$",color="blue")
 pl.xlabel("x(m)")
 pl.ylabel("y(m)")
 pl.xlim(0,60000)
 pl.ylim(0,20000)
 pl.legend()
 pl.show()
-
