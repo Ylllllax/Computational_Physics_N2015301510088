@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+class chao(object):
+    def __init__(self, _theta0=0.2, _omg0=0, _t0=0., _l=9.8,_g=9.8, _dt=0.01, _time=10., _q=0.5, _omgD=2/3, _FD=1.2):
+        self.theta, self.omg, self.t = [_theta0], [_omg0], [_t0]
+        self.l, self.g, self.dt, self.time, self.q, self.omgD, self.FD, self.n, self.thetaa= _l, _g, _dt, _time, _q, _omgD, _FD, int(_time/_dt), 0
+    def calculate(self):
+        for i in range(self.n):
+            self.omg.append(self.omg[i]-(self.g/self.l*np.sin(self.theta[i])-self.q*self.omg[i]+self.FD*np.sin(self.omgD*self.t[i]))*self.dt)
+            self.thetaa = self.theta[i]+self.omg[i+1]*self.dt
+            while self.thetaa>np.pi:     # reset the angle to keep it in range [-pi,pi]
+                self.thetaa=self.thetaa-2.*np.pi
+            while self.thetaa<-np.pi:
+                self.thetaa=self.thetaa+2.*np.pi
+            self.theta.append(self.thetaa)
+            self.t.append(self.t[i]+self.dt)
+    def plot_theta(self,_ax):
+        _ax.plot(self.t, self.theta)
+        
+fig= plt.figure(figsize=(20,8))
+ax = plt.subplot(121)
+
+
+comp= chao()
+comp.calculate()
+comp.plot_theta(ax)
+
+ax.set_title('Simple Pendulum - Euler-Cromer method',fontsize=14)
+ax.set_xlabel('time(s)',fontsize=14)
