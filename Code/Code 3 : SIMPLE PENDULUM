@@ -8,9 +8,9 @@ class osci(object):
         self.l, self.g, self.dt, self.time, self.n= _l, _g, _dt, _time, int(_time/_dt)
     def calculate(self):
         for i in range(self.n):
-            self.t.append(self.t[-1]+self.dt)
-            self.omg.append(self.omg[-1]-self.g/self.l*self.theta[-1]*self.dt)
-            self.theta.append(self.theta[-1]+self.omg[-1]*self.dt)
+            self.t.append(self.t[i]+self.dt)
+            self.omg.append(self.omg[i]-self.g/self.l*self.theta[i]*self.dt)
+            self.theta.append(self.theta[i]+self.omg[i+1]*self.dt)
     def plot_theta(self,_ax):
         _ax.plot(self.t, self.theta)
 
