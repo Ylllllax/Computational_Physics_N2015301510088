@@ -15,7 +15,7 @@ class osci(object):
         _ax.plot(self.t, self.theta)
 
         
-fig= plt.figure(figsize=(10,5))
+fig= plt.figure(figsize=(20,8))
 ax1 = plt.subplot(121)
 
 
