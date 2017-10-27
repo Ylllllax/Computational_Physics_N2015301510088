@@ -1,0 +1,64 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+
+
+class chao(object):
+    def __init__(self,x):
+        self.theta, self.omg, self.t, self.dtheta = [0.2], [0.0], [0.0], [0.0]
+        self.l, self.g, self.dt, self.time, self.q, self.OMGD, self.F_D=9.8, 9.8, 3.0*math.pi/1000, 5000.0, 0.5, 2./3., 1.2
+        self.n=int(self.time/self.dt)
+        self.I=range(self.n)
+        self.x=x
+        self.theta1=[]
+        self.omg1=[]
+    def calculate(self):
+        for i in self.I:
+            self.omg.append(self.omg[i]+(-self.g/self.l*math.sin(self.theta[i])-self.q*self.omg[i]+self.F_D*math.sin(self.OMGD*self.t[i]))*self.dt)
+            self.theta.append(self.theta[i]+self.omg[i+1]*self.dt)
+            if self.theta[i+1]<-math.pi:
+                self.theta[i+1]=self.theta[i+1]+2*math.pi
+            if self.theta[i+1]>math.pi:
+                self.theta[i+1]=self.theta[i+1]-2*math.pi
+            self.t.append(self.t[i]+self.dt)
+            self.dtheta.append(self.theta[i+1]-self.theta[i])
+            self.p=i%1000
+            if self.p==self.x:
+               self.theta1.append(self.theta[-1])
+               self.omg1.append(self.omg[-1])
+        self.theta1=self.theta1[100:]
+        self.omg1=self.omg1[100:]
+    def plot_theta(self,_ax):
+        _ax.plot(self.t, self.theta,label='$F_D$='+str(self.F_D))
+    def plot_omega(self,_ax):
+        _ax.plot(self.t,self.omg,label='$F_D$='+str(self.F_D))
+    def plot_theta_and_omega(self,_ax):
+        _ax.plot(self.theta,self.omg,':',label='$F_D$='+str(self.F_D))
+    def plot_theta1_and_omega1(self, _ax):
+        _ax.plot(self.theta1,self.omg1,'o',label='$F_D$='+str(self.F_D))
+
+fig= plt.figure(figsize=(20,8))
+ax1 = plt.subplot(121)
+
+comp=chao(0)
+comp.calculate()
+comp.plot_theta1_and_omega1(ax1)
+'''
+comp=chao(250)
+comp.calculate()
+comp.plot_theta1_and_omega1(ax1)
+
+comp=chao(500)
+comp.calculate()
+comp.plot_theta1_and_omega1(ax1)
+
+comp=chao(750)
+comp.calculate()
+comp.plot_theta1_and_omega1(ax1)
+'''
+ax1.set_title(r'$\omega$'+' versus '+r'$\theta$',fontsize=14)
+ax1.set_xlabel(r'$\theta$'+'(radians)',fontsize=14)
+ax1.set_ylabel(r'$\omega$'+'(radians/s)',fontsize=14)
+ax1.legend(fontsize=12,loc='best')
+
+plt.show(fig)
