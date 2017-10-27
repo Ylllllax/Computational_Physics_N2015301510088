@@ -27,6 +27,7 @@ class chao(object):
 fig= plt.figure(figsize=(14,7))
 ax1 = plt.subplot(121)
 ax2 = plt.subplot(122)
+
 comp= chao(0.0)
 comp.calculate()
 comp.plot_theta(ax1)
