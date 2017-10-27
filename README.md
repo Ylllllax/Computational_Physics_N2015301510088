@@ -9,6 +9,8 @@
 - [x] [Exercise_04: Problem 1.1][3]
 - [x] [Exercise_05: Problem 2.9][4]
 - [x] [Exercise_06: Problem 2.19][5]
+- [x] [Exercise_07: Problem 3.12][6]
+    
 
 
   [1]: https://www.zybuluo.com/Ylllllax/note/880841
@@ -16,3 +18,4 @@
   [3]: https://www.zybuluo.com/Ylllllax/note/900654
   [4]: https://www.zybuluo.com/Ylllllax/note/911867
   [5]: https://www.zybuluo.com/Ylllllax/note/920763
+  [6]: https://www.zybuluo.com/Ylllllax/note/927311
