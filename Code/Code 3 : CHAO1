@@ -21,7 +21,7 @@ class chao(object):
             self.t.append(self.t[i]+self.dt)
     def plot_theta(self,_ax):
         _ax.plot(self.t, self.theta,label='$F_D$='+str(self.F_D))
-    def plot_w(self,_ax):
+    def plot_omega(self,_ax):
         _ax.plot(self.t,self.omg,label='$F_D$='+str(self.F_D))
 
 fig= plt.figure(figsize=(14,7))
@@ -31,17 +31,17 @@ ax2 = plt.subplot(122)
 comp= chao(0.0)
 comp.calculate()
 comp.plot_theta(ax1)
-comp.plot_w(ax2)
+comp.plot_omega(ax2)
 
 comp=chao(0.5)
 comp.calculate()
 comp.plot_theta(ax1)
-comp.plot_w(ax2)
+comp.plot_omega(ax2)
 
 comp=chao(1.2)
 comp.calculate()
 comp.plot_theta(ax1)
-comp.plot_w(ax2)
+comp.plot_omega(ax2)
 
 ax1.set_title(r'$\theta$'+' versus time',fontsize=14)
 ax2.set_title(r'$\omega$'+' versus time',fontsize=14)
