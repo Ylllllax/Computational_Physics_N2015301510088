@@ -13,6 +13,8 @@
 - [x] [The 7th Homework - The Lorenz Model][7]
 - [x] [The 8th Homework - The Billiard Problem][8]
 
+- [x] [Midterm Homework - Pygame][9]
+
 
   [1]: https://www.zybuluo.com/Ylllllax/note/880841
   [2]: https://www.zybuluo.com/Ylllllax/note/893718
@@ -22,3 +24,4 @@
   [6]: https://www.zybuluo.com/Ylllllax/note/927311
   [7]: https://www.zybuluo.com/Ylllllax/note/937391
   [8]: https://www.zybuluo.com/Ylllllax/note/944726
+  [9]: https://www.zybuluo.com/Ylllllax/note/946813
