@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 
 class THREE(object):
     def __init__(self, _mJ):
-        self.dt, self.time=0.002, 30
+        self.dt, self.time=0.001, 100
         self.n=int(self.time/self.dt)
-        self.GMS= 4*(np.pi**2)
+        self.GMS= 4*(np.pi)**2
         self.GMJ, self.GME = _mJ*self.GMS/1000, self.GMS/330000
         self.xE, self.yE, self.vxE, self.vyE = [1], [0], [0], [np.sqrt(self.GMS)]
         self.xJ, self.yJ, self.vxJ, self.vyJ = [5.2], [0], [0], [np.sqrt(self.GMS/5.2)]
@@ -77,7 +77,7 @@ ax1.set_ylim(-6.0,6.0)
 ax1.set_xlabel(r'$x (AU)$',fontsize=14)
 ax1.set_ylabel(r'$y (AU)$',fontsize=14)
 ax1.set_title('3-body simulation Earth plus Jupiter:'+r' $100M_J$',fontsize=14)
-ax2.set_xlim(-30.0,30.0)
+ax2.set_xlim(-80.0,80.0)
 ax2.set_ylim(-30.0,30.0)
 ax2.set_xlabel(r'$x (AU)$',fontsize=14)
 ax2.set_ylabel(r'$y (AU)$',fontsize=14)
