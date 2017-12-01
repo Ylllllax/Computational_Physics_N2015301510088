@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 class THREE(object):
     def __init__(self, _mJ):
-        self.dt, self.time=0.002, 30
+        self.dt, self.time=0.001, 30
         self.n=int(self.time/self.dt)
         self.GMS= 4*(np.pi**2)
         self.GMJ, self.GME = _mJ*self.GMS/1000, self.GMS/330000
