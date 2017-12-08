@@ -16,6 +16,7 @@
 - [x] [Midterm Homework - Pygame][9]
 
 - [x] [The 9th Homework - The Three-Body Problem][10]
+- [x] [The 10th Homework - Electric Potentials and Fields][11]
 
 
   [1]: https://www.zybuluo.com/Ylllllax/note/880841
@@ -28,3 +29,4 @@
   [8]: https://www.zybuluo.com/Ylllllax/note/944726
   [9]: https://www.zybuluo.com/Ylllllax/note/946813
   [10]: https://www.zybuluo.com/Ylllllax/note/970296
+  [11]: https://www.zybuluo.com/Ylllllax/note/978418
