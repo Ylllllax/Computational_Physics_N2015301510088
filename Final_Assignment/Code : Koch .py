@@ -1,0 +1,66 @@
+from turtle import *  
+def draw1(n,l):  
+    if(n ==0):  
+        forward(l)  
+    else:  
+        for angle in (60,-120,60,0):  
+            draw1(n-1,l/3)  
+            left(angle)  
+
+wn = Screen()
+hideturtle()
+
+up()
+left(180)
+forward(100)
+left(90)
+forward(200)
+left(90)
+down()
+draw1(0,240)
+
+up()
+left(180)
+forward(240)
+right(90)
+forward(80)
+right(90)
+down()
+draw1(1,240)
+up()
+left(180)
+forward(240)
+right(90)
+forward(80)
+right(90)
+down()
+draw1(2,240)
+
+up()
+left(180)
+forward(240)
+right(90)
+forward(80)
+right(90)
+down()
+draw1(3,240)
+
+up()
+left(180)
+forward(240)
+right(90)
+forward(80)
+right(90)
+down()
+draw1(4,240)
+
+up()
+left(180)
+forward(240)
+right(90)
+forward(80)
+right(90)
+down()
+draw1(5,240)
+
+wn.exitonclick()
