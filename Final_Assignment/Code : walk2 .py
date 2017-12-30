@@ -7,7 +7,7 @@ x_now = np.zeros(500)
 x2_now = np.zeros(500)
 x_ave = np.zeros(101)
 x2_ave = np.zeros(101)
-
+'''
 for i in range(100):
     for j in range(500):
         ruler = np.random.rand()
@@ -20,7 +20,21 @@ for i in range(100):
     average2 = sum(x2_now)/500
     x_ave[i+1] = average
     x2_ave[i+1] = average2
-    
+'''
+for i in range(100):
+    for j in range(500):
+        ruler = np.random.rand()
+        if ruler<=0.5:
+            a = np.random.rand()
+            x_now[j] = x_now[j] + a
+        else:
+            b = np.random.rand()
+            x_now[j] = x_now[j] - b
+        x2_now[j] = x_now[j]**2
+    average = sum(x_now)/500
+    average2 = sum(x2_now)/500
+    x_ave[i+1] = average
+    x2_ave[i+1] = average2    
 
 fig= plt.figure(figsize=(14,7))
 ax1=plt.subplot(121)
@@ -41,7 +55,7 @@ y_fit = poly(steps)
 ax2.scatter(steps, x2_ave,s=2)
 ax2.plot(steps, y_fit, 'b')
 ax2.set_xlim(0,100)
-ax2.set_ylim(0,100)
+ax2.set_ylim(0,40)
 ax2.grid(True)
 ax2.set_xlabel('step number(= time)')
 ax2.set_ylabel('<x^2>')
