@@ -16,6 +16,7 @@
  10. [x] [The 9th Homework - The Three-Body Problem][10]
  11. [x] [The 10th Homework - Electric Potentials and Fields][11]
  12. [x] [The 11th Homework - Waves: The Ideal Case][12]
+ 13. [x] [Final Assignment][13]
 
 
   [1]: https://www.zybuluo.com/Ylllllax/note/880841
@@ -30,3 +31,4 @@
   [10]: https://www.zybuluo.com/Ylllllax/note/970296
   [11]: https://www.zybuluo.com/Ylllllax/note/978418
   [12]: https://www.zybuluo.com/Ylllllax/note/986807
+  [13]: https://www.zybuluo.com/Ylllllax/note/1001812
